@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'edu.bbte.licenta.skim2187'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
+    implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.3.Final'
+    annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
+
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.0'
+
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
+}
